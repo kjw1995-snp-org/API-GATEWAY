@@ -11,45 +11,45 @@ eureka:
 spring:
   application:
     name: api-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: snp-css
-          uri: http://localhost:8001/css/
-          predicates:
-            - Path=/css/**
-        - id: snp-js
-          uri: http://localhost:8001/js/
-          predicates:
-            - Path=/js/**
-        - id: snp-img
-          uri: http://localhost:8001/img/
-          predicates:
-            - Path=/img/**
-        - id: snp-assets-img
-          uri: http://localhost:8001/assets/img/
-          predicates:
-            - Path=/img/**
-        - id: snp-font
-          uri: http://localhost:8001/font/
-          predicates:
-            - Path=/font/**
-        - id: snp-fonts
-          uri: http://localhost:8001/fonts/
-          predicates:
-            - Path=/font/**
-        - id: snp-data
-          uri: http://localhost:8001/data/
-          predicates:
-            - Path=/data/**
-        - id: snp-assets-data
-          uri: http://localhost:8001/assets/data
-          predicates:
-            - Path=/data/**
-        - id: snp-main-service
-          uri: lb://snp-web
-          predicates:
-            - Path=/main/**
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: snp-css
+#          uri: lb://snp-web/css/
+#          predicates:
+#            - Path=/css/**
+#        - id: snp-js
+#          uri: lb://snp-web/js/
+#          predicates:
+#            - Path=/js/**
+#        - id: snp-img
+#          uri: lb://snp-web/img/
+#          predicates:
+#            - Path=/img/**
+#        - id: snp-assets-img
+#          uri: lb://snp-web/assets/img/
+#          predicates:
+#            - Path=/img/**
+#        - id: snp-font
+#          uri: lb://snp-web/font/
+#          predicates:
+#            - Path=/font/**
+#        - id: snp-fonts
+#          uri: lb://snp-web/fonts/
+#          predicates:
+#            - Path=/font/**
+#        - id: snp-data
+#          uri: lb://snp-web/data/
+#          predicates:
+#            - Path=/data/**
+#        - id: snp-assets-data
+#          uri: lb://snp-web/assets/data/
+#          predicates:
+#            - Path=/data/**
+#        - id: snp-main-service
+#          uri: lb://snp-web
+#          predicates:
+#            - Path=/main/**
 
 management:
   endpoints:
