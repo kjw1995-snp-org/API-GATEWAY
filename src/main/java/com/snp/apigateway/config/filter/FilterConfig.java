@@ -33,7 +33,7 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
                         r -> r.path("/data/**").uri("lb://snp-web/data/")
                 )
                 .route(
-                        r -> r.path("/data/**").uri("lb://snp-web/assets/data")
+                        r -> r.path("/data/**").uri("lb://snp-web/assets/data/")
                 )
                 .route(
                         r -> r.path("/main/**").uri("lb://snp-web")
@@ -42,7 +42,13 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
                         r -> r.path("/login/v1").uri("lb://snp-web/login/v1")
                 )
                 .route(
+                        r -> r.path("/join/**").uri("lb://snp-web/join")
+                )
+                .route(
                         r -> r.path("/user/login/progress").uri("lb://snp-user-service")
+                )
+                .route(
+                        r -> r.path("/user/join/progress").uri("lb://snp-user-service")
                 )
                 .build();
     }
