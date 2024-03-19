@@ -10,7 +10,11 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
 
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder routeBuilder) {
+
         return routeBuilder.routes()
+                .route(
+                        r -> r.path("/favicon.ico").uri("lb://snp-web/img/")
+                )
                 .route(
                         r -> r.path("/css/**").uri("lb://snp-web/css/")
                 )
