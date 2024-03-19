@@ -48,7 +48,7 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
                         r -> r.path("/user/login/progress").uri("lb://snp-user-service")
                 )
                 .route(
-                        r -> r.path("/user/join/progress").uri("lb://snp-user-service")
+                        r -> r.path("/user/join/progress").uri("lb://snp-user-service/user/join/progress")
                 )
                 .build();
     }
