@@ -1,6 +1,7 @@
-logging:
-  level:
-    org.springframework.cloud.gateway: info
+#logging:
+#  level:
+#    root: info
+#    org.springframework.cloud.gateway: debug
 #    reactor.netty: debug
 
 server:
@@ -16,14 +17,6 @@ eureka:
 spring:
   application:
     name: api-gateway
-  cloud:
-    gateway:
-      default-filters:
-        - name: GlobalFilter
-          args:
-            baseMessage: Global Filter On Way
-            preLogger: true
-            postLogger: true
 #  cloud:
 #    gateway:
 #      routes:

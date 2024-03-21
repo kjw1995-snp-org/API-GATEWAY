@@ -13,6 +13,9 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
 
         return routeBuilder.routes()
                 .route(
+                        r -> r.path("/docs/**").uri("lb://snp-web/docs/")
+                )
+                .route(
                         r -> r.path("/favicon.ico").uri("lb://snp-web/img/")
                 )
                 .route(
