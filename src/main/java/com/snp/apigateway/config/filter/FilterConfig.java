@@ -49,10 +49,19 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
                         r -> r.path("/login/v1").uri("lb://snp-web/login/v1")
                 )
                 .route(
+                        r -> r.path("/login/v2").uri("lb://snp-web/login/v2")
+                )
+                .route(
                         r -> r.path("/join/**").uri("lb://snp-web/join")
                 )
                 .route(
-                        r -> r.path("/user/login/progress").uri("lb://snp-user-service")
+                        r -> r.path("/join/progress").uri("lb://snp-web/join/progress")
+                )
+                .route(
+                        r -> r.path("/login/action").uri("lb://snp-web/login/action")
+                )
+                .route(
+                        r -> r.path("/user/login/action").uri("lb://snp-user-service/user/login/action")
                 )
                 .route(
                         r -> r.path("/user/join/progress").uri("lb://snp-user-service/user/join/progress")

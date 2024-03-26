@@ -19,11 +19,10 @@ public class GlobalFilter implements org.springframework.cloud.gateway.filter.Gl
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpResponse response = exchange.getResponse();
 
-        log.info("GlobalFilter Active!!");
-        log.info("Uri = {}", request.getURI());
-        log.info("response Code = {}", response.getStatusCode());
+        log.info("method = {}, Uri = {}", request.getMethod(), request.getURI());
 
         return chain.filter(exchange);
+
     }
 
     @Override
