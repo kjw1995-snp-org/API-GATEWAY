@@ -13,58 +13,58 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
 
         return routeBuilder.routes()
                 .route(
-                        r -> r.path("/docs/**").uri("lb://snp-web/docs/")
+                        r -> r.path("/docs/**").uri("lb://web/docs/")
                 )
                 .route(
-                        r -> r.path("/favicon.ico").uri("lb://snp-web/img/")
+                        r -> r.path("/favicon.ico").uri("lb://web/img/")
                 )
                 .route(
-                        r -> r.path("/css/**").uri("lb://snp-web/css/")
+                        r -> r.path("/css/**").uri("lb://web/css/")
                 )
                 .route(
-                        r -> r.path("/js/**").uri("lb://snp-web/js/")
+                        r -> r.path("/js/**").uri("lb://web/js/")
                 )
                 .route(
-                        r -> r.path("/img/**").uri("lb://snp-web/img/")
+                        r -> r.path("/img/**").uri("lb://web/img/")
                 )
                 .route(
-                        r -> r.path("/img/**").uri("lb://snp-web/assets/img/")
+                        r -> r.path("/img/**").uri("lb://web/assets/img/")
                 )
                 .route(
-                        r -> r.path("/font/**").uri("lb://snp-web/font/")
+                        r -> r.path("/font/**").uri("lb://web/font/")
                 )
                 .route(
-                        r -> r.path("/fonts/**").uri("lb://snp-web/font/")
+                        r -> r.path("/fonts/**").uri("lb://web/font/")
                 )
                 .route(
-                        r -> r.path("/data/**").uri("lb://snp-web/data/")
+                        r -> r.path("/data/**").uri("lb://web/data/")
                 )
                 .route(
-                        r -> r.path("/data/**").uri("lb://snp-web/assets/data/")
+                        r -> r.path("/data/**").uri("lb://web/assets/data/")
                 )
                 .route(
-                        r -> r.path("/main/**").uri("lb://snp-web")
+                        r -> r.path("/main/**").uri("lb://web")
                 )
                 .route(
-                        r -> r.path("/login/v1").uri("lb://snp-web/login/v1")
+                        r -> r.path("/login/v1").uri("lb://web/login/v1")
                 )
                 .route(
-                        r -> r.path("/login/v2").uri("lb://snp-web/login/v2")
+                        r -> r.path("/login/v2").uri("lb://web/login/v2")
                 )
                 .route(
-                        r -> r.path("/join/**").uri("lb://snp-web/join")
+                        r -> r.path("/join/**").uri("lb://web/join")
                 )
                 .route(
-                        r -> r.path("/join/progress").uri("lb://snp-web/join/progress")
+                        r -> r.path("/join/progress").uri("lb://web/join/progress")
                 )
                 .route(
-                        r -> r.path("/login/action").uri("lb://snp-web/login/action")
+                        r -> r.path("/login/action").uri("lb://web/login/action")
                 )
                 .route(
-                        r -> r.path("/user/login/action").uri("lb://snp-user-service/user/login/action")
+                        r -> r.path("/user/login/action").uri("lb://user-service/user/login/action")
                 )
                 .route(
-                        r -> r.path("/user/join/progress").uri("lb://snp-user-service/user/join/progress")
+                        r -> r.path("/user/join/progress").uri("lb://user-service/user/join/progress")
                 )
                 .build();
     }
