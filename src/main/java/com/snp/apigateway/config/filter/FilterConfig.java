@@ -11,6 +11,8 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder routeBuilder) {
 
+        AuthorizationHeaderFilter authorizationHeaderFilter = new AuthorizationHeaderFilter();
+
         return routeBuilder.routes()
                 .route(
                         r -> r.path("/docs/**").uri("lb://web/docs/")
@@ -61,7 +63,7 @@ public class FilterConfig { // SNP-WEB Server Gateway Config
                         r -> r.path("/login/action").uri("lb://web/login/action")
                 )
                 .route(
-                        r -> r.path("/user/login/action").uri("lb://user-service/user/login/action")
+                        r -> r.path("/user/login/action").filters(f -> f.filter(authorizationHeaderFilter.apply(new AuthorizationHeaderFilter.Config()))).uri("lb://user-service/user/login/action")
                 )
                 .route(
                         r -> r.path("/user/join/progress").uri("lb://user-service/user/join/progress")
